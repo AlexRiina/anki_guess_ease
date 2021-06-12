@@ -2,6 +2,7 @@ tags
 meta.json  # anki global plugin settings (e.g. disabled)
 plugin.zip  # plugin distribution
 .python-version
+*.ankiaddon
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
