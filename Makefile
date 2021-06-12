@@ -1,22 +1,21 @@
-.PHONY: clean test build build_test develop
+.PHONY: clean quick_test test develop
 
 plugin.ankiaddon:
-	zip plugin.ankiaddon -j -r src
+	python setup.py build
+	cd build/lib/anki_guess_ease/ && zip plugin.ankiaddon -r *
+	mv build/lib/anki_guess_ease/plugin.ankiaddon .
 
 clean:
-	rm -r build dist **/*.egg-info plugin.zip || true
+	-rm -r build dist **/*.egg-info plugin.ankiaddon
 	pyclean .
 
-build:
-	pip install .
-
-build_test:
-	pip install .[test]
-
-test:
-	flake8 src
-	mypy src
+quick_test:
+	flake8 anki_guess_ease
+	mypy anki_guess_ease
 	black --check .
 
+test:
+	tox
+
 develop:
-	ln -s ${PWD}/src ~/.local/share/Anki2/addons21/$$(basename ${PWD})_develop
+	ln -s ${PWD}/anki_guess_ease ~/.local/share/Anki2/addons21/$$(basename ${PWD})_develop
