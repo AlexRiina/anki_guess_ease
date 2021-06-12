@@ -1,0 +1,6 @@
+from aqt import gui_hooks
+from .main import reviewer_did_answer_card, reviewer_will_answer_card
+
+
+gui_hooks.reviewer_will_answer_card.append(reviewer_will_answer_card)
+gui_hooks.reviewer_did_answer_card.append(reviewer_did_answer_card)
