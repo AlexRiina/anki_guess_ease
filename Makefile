@@ -1,7 +1,7 @@
 .PHONY: clean test build build_test develop
 
 plugin.ankiaddon:
-	zip plugin.zip -j -r src
+	zip plugin.ankiaddon -j -r src
 
 clean:
 	rm -r build dist **/*.egg-info plugin.zip || true

@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING, Optional
 
 from anki.consts import CARD_TYPE_REV
 
-LOG = logging.getLogger("auto_difficulty")
+LOG = logging.getLogger("guess_ease")
 
 
 if TYPE_CHECKING:
