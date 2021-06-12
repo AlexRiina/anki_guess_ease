@@ -1,9 +1,11 @@
 import json
 import pathlib
-from setuptools import setup, find_packages
 
+from setuptools import setup
 
-with (pathlib.Path(__file__).resolve().parent / "anki_guess_ease" / "manifest.json").open() as fp:
+with (
+    pathlib.Path(__file__).resolve().parent / "anki_guess_ease" / "manifest.json"
+).open() as fp:
     manifest = json.load(fp)
 
 
